@@ -1,0 +1,26 @@
+[
+  {
+    "model": "discounts.discount", 
+    "pk": 1, 
+    "fields": {"name": "$5 off your purchase", "code": "5OFF", "active": true, "start_date": "2022-10-01", "end_date": "2022-10-31", "type": "fixed", "usage_max": 0, "usage_count": 0}
+  }, 
+  {
+    "model": "discounts.discount", 
+    "pk": 2, 
+    "fields": {"name": "10% off the for the month of October", "code": "OCT10", "active": true, "start_date": "2022-10-01", "end_date": "2022-10-31", "type": "percent", "usage_max": 3, "usage_count": 0}
+  }, 
+  {
+    "model": "discounts.discount", 
+    "pk": 3, 
+    "fields": {"name": "Buy one Halloween shirt, get one Thanksgiving shirt free", "code": "BOGO", "active": true, "start_date": "2022-10-01", "end_date": "2022-10-31", "type": "product", "usage_max": 0, "usage_count": 0}
+  }, 
+  {
+    "model": "discounts.percent", "pk": 2, "fields": {"value": 10}
+  }, 
+  {
+    "model": "discounts.fixed", "pk": 1, "fields": {"value": 5}
+  }, 
+  {
+    "model": "discounts.product", "pk": 3, "fields": {"bo": "HALLOW512", "go": "THNKSG512"}
+  }
+]

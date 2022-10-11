@@ -1,0 +1,22 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:11.6
+    ports:
+      - 15432:5432
+  web:
+    restart: always
+    environment:
+      - DJANGO_SECRET_KEY=local
+    build: ./
+    command: >
+      bash -c "python wait_for_postgres.py &&
+               ./manage.py migrate &&
+               ./manage.py loaddata ./discount-engine/discounts/fixtures/discounts.json &&
+               ./manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
